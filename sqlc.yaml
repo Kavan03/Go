@@ -1,0 +1,22 @@
+version: "2"
+sql:
+  - schema: "sql/schema"
+    queries: "sql/queries"
+    engine: "postgresql"
+    gen:
+      go:
+        out: "internal/database"
+# This YAML file is a configuration file for sqlc, a tool that generates type-safe Go code from SQL queries.
+# Specifies the configuration version for sqlc.
+# Defines the SQL source files for code generation:
+# schema: "sql/schema" → The directory containing database schema files (.sql files with CREATE TABLE, ALTER TABLE, etc.).
+# queries: "sql/queries" → The directory containing SQL queries (.sql files with SELECT, INSERT, UPDATE, DELETE).
+# engine: "postgresql" → Specifies PostgreSQL as the database engine.
+# Generates Go code from SQL queries and saves it in the internal/database/ directory.
+# When you run:
+
+# sqlc generate
+
+# sqlc reads schema files from sql/schema/ and query files from sql/queries/.
+# It generates Go structs and methods for executing the queries.
+# The generated code is stored in internal/database/.
